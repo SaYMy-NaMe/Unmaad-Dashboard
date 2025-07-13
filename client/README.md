@@ -1,88 +1,44 @@
-# Unmaad Satirical Bot - React Client
+# React Frontend
 
-A modern React.js frontend for the Unmaad Satirical Bot API.
+React application for the Unmaad Satirical Bot with chat interface and multiple AI endpoints.
 
-## Features
+## Overview
 
-- 🤖 **Three AI Endpoints**: Satirical Bot, Satirical Bot 1, and Lambda
-- ⚡ **Real-time Loading States**: Beautiful spinner animations during API calls
-- 🎨 **Modern UI**: Clean, responsive design with gradient backgrounds
-- 📱 **Mobile Responsive**: Works perfectly on all device sizes
-- 🔄 **Auto Proxy**: Automatically proxies API calls to the backend server
+Modern React app with tab-based navigation for three AI endpoints. Each tab maintains separate chat history. Features real-time loading states and responsive design.
 
-## Available APIs
-
-### 1. Satirical Bot (`/api/satirical-bot`)
-- **Method**: POST
-- **Parameters**: `message` (string)
-- **Returns**: Text and chatbot responses
-
-### 2. Satirical Bot 1 (`/api/satirical-bot-1`)
-- **Method**: POST
-- **Parameters**: `message` (string)
-- **Returns**: Alternative text and chatbot responses
-
-### 3. Lambda (`/api/lambda`)
-- **Method**: GET
-- **Parameters**: None
-- **Returns**: Lambda-generated responses
-
-## Getting Started
-
-### Prerequisites
-- Node.js (v14 or higher)
-- The backend server running on port 8000
-
-### Installation
-
-1. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-2. Start the development server:
-   ```bash
-   npm start
-   ```
-
-3. Open [http://localhost:3001](http://localhost:3001) in your browser
-
-## Usage
-
-1. **Select an API**: Choose between Satirical Bot, Satirical Bot 1, or Lambda
-2. **Enter Message**: Type your message (not required for Lambda)
-3. **Send Request**: Click the send button and watch the loading spinner
-4. **View Response**: See the AI-generated response in the response box
-
-## Project Structure
+## Folder Structure
 
 ```
 client/
 ├── public/
 │   └── index.html
 ├── src/
-│   ├── App.js          # Main application component
-│   ├── App.css         # Component-specific styles
-│   ├── index.js        # React entry point
-│   └── index.css       # Global styles
+│   ├── components/          # React components
+│   ├── hooks/              # Custom hooks
+│   ├── utils/              # Helper functions
+│   ├── App.js
+│   ├── App.css
+│   ├── index.js
+│   └── index.css
 ├── package.json
 └── README.md
 ```
 
-## Dependencies
-
-- **React**: UI framework
-- **Axios**: HTTP client for API calls
-- **Lucide React**: Modern icon library
-
-## Development
-
-The app uses a proxy configuration to automatically forward API calls to the backend server running on port 8000. This means you don't need to worry about CORS or absolute URLs.
-
-## Building for Production
+## Quick Start
 
 ```bash
-npm run build
+npm install
+npm run dev
 ```
 
-This creates an optimized production build in the `build` folder.
+Access at: http://localhost:8000
+
+## Configuration
+
+- Port: 8000
+- API Base URL: http://localhost:3000 (in `src/utils/baseUrl.js`)
+
+## Available Scripts
+
+- `npm start` - Development server
+- `npm run build` - Production build

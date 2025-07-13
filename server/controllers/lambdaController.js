@@ -1,12 +1,12 @@
 // Controller for /api/lambda
 
-let gradioClient;
+let getGradioClient;
 let clientConnectionStatus;
 let resetGradioClient;
 let NODE_ENV;
 
 function setDependencies(deps) {
-  gradioClient = deps.gradioClient;
+  getGradioClient = deps.getGradioClient;
   clientConnectionStatus = deps.clientConnectionStatus;
   resetGradioClient = deps.resetGradioClient;
   NODE_ENV = deps.NODE_ENV;
@@ -23,6 +23,14 @@ const getLambda = async (req, res) => {
     }
     console.log('🔄 Processing lambda request');
     await resetGradioClient();
+    const gradioClient = getGradioClient();
+    if (!gradioClient) {
+      return res.status(503).json({
+        error: 'Gradio client not initialized',
+        status: clientConnectionStatus(),
+        message: 'Please try again later or check server logs'
+      });
+    }
     const result = await gradioClient.predict('/lambda', {});
     const [chatbotOutput, textboxOutput] = result.data;
     res.json({

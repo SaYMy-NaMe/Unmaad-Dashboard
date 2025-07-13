@@ -19,7 +19,8 @@ export const processBotResponse = (result, message) => {
   
   if (result.data.output) {
     if (result.data.output.textbox_value) {
-      botResponse = stripEchoedInput(message, result.data.output.textbox_value);
+      // For Lambda, don't strip echoed input since there's no user message
+      botResponse = message ? stripEchoedInput(message, result.data.output.textbox_value) : result.data.output.textbox_value;
     } else if (result.data.output.chatbot_value) {
       // Handle chatbot_value which might be an array
       let chatbotValue = result.data.output.chatbot_value;
@@ -31,7 +32,8 @@ export const processBotResponse = (result, message) => {
           chatbotValue = chatbotValue[chatbotValue.length - 1] || '';
         }
       }
-      botResponse = stripEchoedInput(message, chatbotValue);
+      // For Lambda, don't strip echoed input since there's no user message
+      botResponse = message ? stripEchoedInput(message, chatbotValue) : chatbotValue;
     }
   } else if (result.data.response) {
     botResponse = JSON.stringify(result.data.response, null, 2);
