@@ -35,12 +35,7 @@ Unmaad/
 
 ## Setup & Installation
 
-### 1. Clone the Repository
-```bash
-git clone <repository-url>
-```
-
-### 2. Install Dependencies
+### 1. Install Dependencies
 
 **Backend:**
 ```bash
@@ -54,7 +49,7 @@ cd client
 npm install
 ```
 
-### 3. Run the Application
+### 2. Run the Application
 
 **Backend (Terminal 1):**
 ```bash
