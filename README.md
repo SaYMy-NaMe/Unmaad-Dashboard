@@ -1,5 +1,23 @@
 # 🤖 Unmaad Satirical Bot
 
+## Getting Started (Recommended)
+
+```bash
+# 1. Clone the repository
+git clone <repository-url>
+```
+
+Now, open the `Unmaad-Dashboard` folder and open a terminal inside it.
+To launch the project in VS Code, run:
+
+```bash
+code .
+```
+
+Then, follow the steps below to install dependencies and run the app.
+
+---
+
 A full-stack AI chat application with React frontend and Express backend, featuring multiple AI endpoints for satirical conversations.
 
 ## Overview
@@ -15,19 +33,38 @@ Unmaad/
 └── README.md
 ```
 
-## Quick Start
+## Setup & Installation
 
-### Backend
+### 1. Clone the Repository
+```bash
+git clone <repository-url>
+```
+
+### 2. Install Dependencies
+
+**Backend:**
 ```bash
 cd server
 npm install
-npm run dev
 ```
 
-### Frontend
+**Frontend:**
 ```bash
 cd client
 npm install
+```
+
+### 3. Run the Application
+
+**Backend (Terminal 1):**
+```bash
+cd server
+npm run dev
+```
+
+**Frontend (Terminal 2):**
+```bash
+cd client
 npm run dev
 ```
 
